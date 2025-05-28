@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo
+my:
+  text: |
+    This is a multi-line
+    text that now I can include
+  number: 420
+  flag: false
+  ttl: 10s
+  gibberish: classpath:myfile.txt
