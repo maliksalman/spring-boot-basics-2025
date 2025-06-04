@@ -1,11 +1,32 @@
 spring:
   application:
     name: demo
-my:
+first:
   text: |
     This is a multi-line
     text that now I can include
   number: 420
   flag: false
   ttl: 10s
+my:
   gibberish: classpath:myfile.txt
+
+data:
+  heroes:
+    superman:
+      name: superman
+      age: 35
+      universe: dc
+      secretIdentity: Clark Kent
+    ironman:
+      name: ironman
+      age: 40
+      universe: marvel
+      secretIdentity: Tony Stark
+  universes:
+    dc:
+      name: dc
+      fictionalCities: true
+    marvel:
+      name: marvel
+      fictionalCities: false
