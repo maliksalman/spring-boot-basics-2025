@@ -14,20 +14,20 @@ import java.util.Optional;
 @RequestMapping("/heroes")
 public class HeroController {
 
-    private final HeroRepository repository;
+    private final HeroService service;
 
-    public HeroController(HeroRepository repository) {
-        this.repository = repository;
+    public HeroController(HeroService service) {
+        this.service = service;
     }
 
     @GetMapping
     public Collection<Hero> listHeroes() {
-        return repository.list();
+        return service.list();
     }
 
     @GetMapping("/{name}")
     public ResponseEntity<Hero> findHeroByName(@PathVariable("name") String name) {
-        Optional<Hero> optionalHero = repository.findByName(name);
+        Optional<Hero> optionalHero = service.findByName(name);
         if (optionalHero.isPresent()) {
             return new ResponseEntity<>(optionalHero.get(), HttpStatus.OK);
         } else {
@@ -37,7 +37,7 @@ public class HeroController {
 
     @GetMapping("/{name}/universe")
     public ResponseEntity<Universe> findUniverseByHeroName(@PathVariable("name") String name) {
-        return repository.findUniverse(name)
+        return service.findUniverse(name)
                 .map(u -> new ResponseEntity<>(u, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
