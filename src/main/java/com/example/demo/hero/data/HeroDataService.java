@@ -3,12 +3,14 @@ package com.example.demo.hero.data;
 import com.example.demo.hero.Hero;
 import com.example.demo.hero.HeroService;
 import com.example.demo.hero.Universe;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Optional;
 
 @Component
+@Profile("!db")
 public class HeroDataService implements HeroService {
 
     private final HeroesData data;
