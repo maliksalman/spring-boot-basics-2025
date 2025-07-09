@@ -8,6 +8,7 @@ This repository tracks the progress of our KT sessions, as we introduce more and
 - Externalized Configuration
 - Spring Profiles
 - JDBC repositories
+- Making REST calls
 
 ## Building
 
