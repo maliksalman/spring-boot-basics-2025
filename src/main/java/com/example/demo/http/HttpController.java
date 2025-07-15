@@ -14,9 +14,14 @@ public class HttpController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping("/get")
     public GetResponse doGetOperation() {
         return service.doGetOperation();
+    }
+
+    @GetMapping("/post")
+    public PostResponse doPostperation() {
+        return service.doPostOperation();
     }
 
 }

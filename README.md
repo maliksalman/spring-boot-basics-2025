@@ -63,3 +63,12 @@ To terminate the container and all the data in it, run:
 ```
 docker rm -f postgres
 ```
+
+## Running Local *httpbin*
+
+```
+docker run -d --rm \
+    --name httpbin \
+    -p 8585:80 \
+    kennethreitz/httpbin
+```

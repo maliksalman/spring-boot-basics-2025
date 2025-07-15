@@ -30,3 +30,6 @@ data:
     marvel:
       name: marvel
       fictionalCities: false
+
+httpbin:
+  base-url: http://localhost:8585
